@@ -107,11 +107,11 @@ app.post("/home", upload.single("image"), async (req, res) => {
     console.log("Data Saved....");
   } catch (err) {
     console.log("Error while saving data.", err);
-    res.redirect("localhost");
+    res.redirect("/")
   }
 
   const link = `${process.env.link}/${shortCode}`;
-  res.render("link", { link });
+  res.render("link", { link,shortCode });
 });
 
 
