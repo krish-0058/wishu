@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/wish.css">
+    <link rel="icon" href="/files/cake.png" type="image/png">
+    <title>wishU</title>
+</head>
+<body>
+
+    <div class="start-btn">
+        <button id="start">🎉 Start Surprise 🎉</button>
+        <audio id="bg-music" src="/files/music.mp3"></audio>
+    </div>
+
+    <div class="container" style="display: none;">
+        <div class="wish">
+            <div id="happy"></div>
+            <div id="birthday"></div>
+        </div>
+
+        <div class="main">
+            <div class="naam">
+                <h4><%= wishCard.naam %></h4>
+            </div>
+
+            <div class="image">
+                <img src="<%= wishCard.image %>" alt="">
+            </div>
+
+            <div class="paragraph">
+                <h5><%= wishCard.message %></h5>
+            </div>
+        </div>
+
+        <div class="cake">
+            <img src="/files/cake.gif" alt="cake">
+        </div>
+
+        <div class="balloonright">
+            <img src="/files/balloon.webp" alt="balloon">
+        </div>
+    </div>
+
+    <script src="/js/wish.js"></script>
+</body>
+</html>

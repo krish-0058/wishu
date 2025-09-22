@@ -1,0 +1,219 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #021231;
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 10vw;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.left {
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(255, 255, 255, 0.89);
+    font-family: 'Dancing Script', cursive;
+    font-size: 110px;
+    text-align: center;
+    line-height: 150px;
+    letter-spacing: 2px;
+}
+
+.left span {
+    display: inline-block;      /* Needed for transform */
+    opacity: 0;                 /* start invisible */
+    animation: fadeIn 0s ease-in-out forwards;
+}
+
+.right{
+    flex: 1;
+    background-color: #020e2991;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: white;
+
+    opacity: 0;
+    animation: comeIn 1.5s ease-in forwards;
+    animation-delay: 2.5s;
+}
+
+@keyframes comeIn {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.right form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+}
+
+textarea{
+    resize: none;
+    min-height: 100px;
+    font-family: sans-serif;
+}
+
+.top-section{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.left-photo img{
+    padding: 5px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+.upload-btn{
+    padding: 10px 15px;
+    background-color: #ff6b6b;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.upload-btn:hover{
+    background-color: #ff4b4b;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.submit-btn{
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 20px;
+    background-color: #0c2350;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    font-size: x-large;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn:hover{
+    background-color: #021231;
+}
+
+
+
+
+
+/* ---------------- Responsive Fix ---------------- */
+@media (max-width:1000px) {
+    body {
+        padding: 15px;
+        height: auto;              /* let content grow naturally */
+    }
+
+    .container {
+        margin-top: 5vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        gap: 30px;
+        width: 100%;
+        max-width: 100%;           /* prevent overflow */
+        overflow-x: hidden;        /* stop horizontal scroll */
+    }
+
+    .left {
+        font-size: 10vw;           /* scale with screen width */
+        line-height: 1.2;          /* flexible line height */
+        word-wrap: break-word;     /* wrap long words */
+        text-align: center;
+    }
+
+    .right {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .top-section {
+        flex-direction: row;  
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;           /* wrap if too tight */
+    }
+
+    .left-photo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .upload-btn {
+        font-size: 14px;
+        padding: 8px 12px;
+        flex-shrink: 0;            /* don’t shrink */
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .submit-btn {
+        font-size: 18px;
+        padding: 12px;
+    }
+}

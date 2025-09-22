@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #021231;
+    font-family: sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.box {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.box h1 {
+    color: white;
+    font-size: 60px;
+    font-family: 'Dancing Script', cursive;
+    margin: 10px;
+}
+
+.link {
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.link a {
+    text-decoration: underline;
+    color: aquamarine;
+}
+
+.back button {
+    margin-top: 100px;
+    font-size: 30px;
+    font-weight: 600;
+    color: whitesmoke;
+    padding: 10px 50px;
+    background-color: #f83030;
+    border-radius: 20px;
+}
+
+button:hover {
+    background-color: #ce0f0f;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    .box {
+        padding: 20px;
+    }
+
+    .box h1 {
+        font-size: 35px; /* shrink heading */
+        line-height: 1.2;
+    }
+
+    .link {
+        margin-top: 30px;
+        font-size: 20px; /* smaller link text */
+    }
+
+    .back button {
+        margin-top: 50px;
+        font-size: 20px; /* smaller button */
+        padding: 10px 30px; /* tighter padding for mobile */
+    }
+}
