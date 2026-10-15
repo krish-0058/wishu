@@ -11,7 +11,8 @@
     <div class="container">
         <div class="box">
             <div><h1>Link Created</h1></div>
-            <div class="link"><a href=<%= shortCode %>><%= link %></a></div>
+            <div id="link" class="link"><a href=<%= shortCode %>><%= link %></a></div>
+            <button onclick="copylink()">🔗</button>
         </div>
 
         <div class="back">
@@ -19,4 +20,19 @@
         </div>
     </div>
 </body>
+
+
+
+<script>
+    function copylink(){
+        const link = document.getElementById("link")
+        navigator.clipboard.writeText(link)
+        .then(()=>{
+            alert("Link copied to clipboard")
+        })
+        .catch(()=>{
+            alert("Failed to copy link")
+        })
+    }
+</script>
 </html>
