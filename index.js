@@ -113,8 +113,13 @@ app.post("/home", upload.single("image"), async (req, res) => {
     res.redirect("/")
   }
 
-  const link = `${process.env.link}/${shortCode}`;
-  res.render("link", { link});
+  const baseUrl = process.env.link
+    .replace(/^https?:\/\//, "")
+    .replace(/\/+$/, "");
+
+  const link = `https://${baseUrl}/${shortCode}`;
+
+  res.render("link", { link });
 });
 
 
