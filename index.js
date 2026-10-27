@@ -14,13 +14,16 @@ const app = express();
 const port = 3000;
 
 
+const dns = require("node:dns");
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
 
 
 
 mongoose
   .connect(process.env.MONGODB_URL)
   .then(() => console.log("Connection Established"))
-  .catch(() => console.log("Failed to connect"));
+  .catch((err) => console.log("Failed to connect : ",err));
 
 
 
@@ -111,7 +114,7 @@ app.post("/home", upload.single("image"), async (req, res) => {
   }
 
   const link = `${process.env.link}/${shortCode}`;
-  res.render("link", { link,shortCode });
+  res.render("link", { link});
 });
 
 

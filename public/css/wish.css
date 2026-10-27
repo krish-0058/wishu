@@ -4,7 +4,8 @@
 }
 
 body {
-    background-color: #021231;
+    /* background-color: #021231; */
+    background: #021231;
 }
 
 /* ================== Start Button ================== */
@@ -16,20 +17,46 @@ body {
 }
 
 .start-btn button {
-    padding: 20px 40px;
-    font-size: 30px;
-    font-family: 'Dancing Script', cursive;
-    font-weight: 500;
-    background: #ff4081;
+    display: inline-block;
+    padding: 15px 30px;
     color: white;
-    border-radius: 20px;
+    background: #f04452;
+    border: 1px solid #ff6672;
+    border-radius: 21px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
     cursor: pointer;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
-    transition: 0.3s;
+    text-decoration: none;
+    transition: 0.25s ease;
+
+    animation: heartbeat 1s ease-in-out infinite;
 }
 
 .start-btn button:hover {
-    background: #e73370;
+    background: #ff6672;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.12);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.12);
+    }
+
+    75% {
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 500px) {
@@ -44,11 +71,13 @@ body {
     flex-direction: column;
     align-items: center;
     color: transparent;
-    -webkit-text-stroke: 2px white;
-    font-size: 90px;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.88);
     font-family: 'Dancing Script', cursive;
-    line-height: 120px;
-    letter-spacing: 8px;
+    font-size: clamp(58px, 7vw, 105px);
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 1px;
 }
 
 #happy {

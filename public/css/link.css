@@ -1,79 +1,246 @@
+```css
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    min-height: 100vh;
     background-color: #021231;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+    color: white;
 }
 
 .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 25px;
 }
 
+/* Main Card */
 .box {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    padding: 40px 35px;
+    background: #0b2042;
+    border: 1px solid #19385e;
+    border-radius: 24px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
 }
 
+/* Success Icon */
+.success-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(127, 255, 212, 0.1);
+    border: 1px solid rgba(127, 255, 212, 0.3);
+    border-radius: 50%;
+    color: aquamarine;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+/* Heading */
 .box h1 {
     color: white;
-    font-size: 60px;
     font-family: 'Dancing Script', cursive;
-    margin: 10px;
+    font-size: 55px;
+    margin-bottom: 10px;
 }
 
-.link {
-    margin-top: 50px;
-    font-size: 30px;
+.subtitle {
+    color: #a9bbd5;
+    font-size: 14px;
+    margin-bottom: 30px;
 }
 
-.link a {
-    text-decoration: underline;
+/* Link Box */
+.link-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #06172f;
+    border: 1px solid #25466c;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.link-container a {
+    flex: 1;
+    min-width: 0;
     color: aquamarine;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
 }
 
-.back button {
-    margin-top: 100px;
-    font-size: 30px;
-    font-weight: 600;
-    color: whitesmoke;
-    padding: 10px 50px;
-    background-color: #f83030;
-    border-radius: 20px;
+.link-container a:hover {
+    color: white;
 }
 
-button:hover {
-    background-color: #ce0f0f;
+/* Copy Icon Button */
+.copy-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    color: aquamarine;
+    background: #112b4c;
+    border: 1px solid #25466c;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.copy-icon:hover {
+    background: #1a4168;
+    transform: translateY(-2px);
+}
+
+/* Main Copy Button */
+.copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 22px;
+    padding: 12px 28px;
+    color: #021b2c;
+    background: aquamarine;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.copy-button:hover {
+    background: #65eac0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(127, 255, 212, 0.15);
+}
+
+.copy-button:active {
+    transform: scale(0.97);
+}
+
+/* Copy Feedback */
+.copy-message {
+    min-height: 20px;
+    margin-top: 12px;
+    color: aquamarine;
+    font-size: 12px;
+}
+
+/* Home Button */
+.home-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 12px 30px;
+    color: white;
+    background: #f04452;
+    border: 1px solid #ff6672;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.home-button:hover {
+    background: #d92f40;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(240, 68, 82, 0.2);
+}
+
+.footer-text {
+    margin-top: 30px;
+    color: #7185a4;
+    font-size: 12px;
+}
+
+/* Keyboard Accessibility */
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid aquamarine;
+    outline-offset: 4px;
 }
 
 /* Responsive Design */
 @media (max-width: 700px) {
-    .box {
+    .container {
         padding: 20px;
     }
 
+    .box {
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+
     .box h1 {
-        font-size: 35px; /* shrink heading */
-        line-height: 1.2;
+        font-size: 42px;
     }
 
-    .link {
-        margin-top: 30px;
-        font-size: 20px; /* smaller link text */
+    .success-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 29px;
     }
 
-    .back button {
-        margin-top: 50px;
-        font-size: 20px; /* smaller button */
-        padding: 10px 30px; /* tighter padding for mobile */
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .link-container {
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .link-container a {
+        font-size: 13px;
+    }
+
+    .copy-icon {
+        padding: 8px;
+    }
+
+    .copy-button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .home-button {
+        margin-top: 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .box {
+        padding: 25px 14px;
+    }
+
+    .box h1 {
+        font-size: 36px;
+    }
+
+    .link-container a {
+        font-size: 12px;
     }
 }
